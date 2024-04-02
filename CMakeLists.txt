@@ -21,9 +21,9 @@ FILE(GLOB ComponentsSrc tests/components/*.c)
 
 set(TEST_CMD ${PROJECT_NAME}_test)
 
-add_executable(${TEST_CMD} tests/main.c ${ComponentsSrc})
+add_executable(${TEST_CMD} tests/tester.c ${ComponentsSrc})
 
-target_include_directories(${TEST_CMD} PRIVATE .)
+target_include_directories(${TEST_CMD} PRIVATE . tests)
 target_link_libraries(${TEST_CMD} ${PROJECT_NAME})
 
 foreach(file ${ComponentsSrc})
